@@ -7,4 +7,5 @@ import me.shedaniel.autoconfig.annotation.Config;
 public
 class EnchantModConfig implements ConfigData {
     public int enchantCap = 10;
+    public boolean removeAnvilLimit = true;
 }

@@ -4,7 +4,8 @@
   "package": "amymialee.noenchantcap.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "AnvilScreenHandlerMixin"
+    "AnvilScreenHandlerMixin",
+    "AnvilScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

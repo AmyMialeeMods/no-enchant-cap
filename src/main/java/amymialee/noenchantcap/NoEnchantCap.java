@@ -5,7 +5,7 @@ import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 
 public class NoEnchantCap implements ModInitializer {
-    EnchantModConfig config;
+    public static EnchantModConfig config;
     @Override
     public void onInitialize() {
         AutoConfig.register(EnchantModConfig.class, Toml4jConfigSerializer::new);
