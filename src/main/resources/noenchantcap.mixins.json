@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AnvilScreenHandlerMixin",
-    "AnvilScreenMixin"
+    "AnvilScreenMixin",
+    "EnchantCommandMixin"
   ],
   "injectors": {
     "defaultRequire": 1
