@@ -8,6 +8,7 @@ public
 class EnchantModConfig implements ConfigData {
     public boolean removeAnvilLimit = true;
     public boolean allowAllEnchantmentCombinations = false;
+    public boolean allowAnyEnchantOnAnyItem = false;
 
     public boolean useGlobalEnchantCap = true;
     public int globalEnchantCap = 10;

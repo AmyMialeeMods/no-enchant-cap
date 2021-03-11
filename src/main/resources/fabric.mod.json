@@ -23,9 +23,9 @@
     "noenchantcap.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.1",
+    "fabricloader": "*",
     "fabric": "*",
-    "minecraft": "1.16.5"
+    "minecraft": ">=1.16.2"
   },
   "custom": {
     "modupdater": {

@@ -86,6 +86,17 @@ public class AnvilScreenHandlerMixin {
             target = "Lnet/minecraft/enchantment/Enchantment;canCombine(Lnet/minecraft/enchantment/Enchantment;)Z"))
     private boolean redirectCanCombine(Enchantment enchantment, Enchantment enchantment2) {
         if (config.allowAllEnchantmentCombinations) {
+            if (enchantment.getTranslationKey().equals("enchantment.minecraft.silk_touch") &&
+                    enchantment2.getTranslationKey().equals("enchantment.minecraft.fortune") ||
+                    enchantment.getTranslationKey().equals("enchantment.minecraft.riptide") &&
+                    enchantment2.getTranslationKey().equals("enchantment.minecraft.loyalty") ||
+                    enchantment.getTranslationKey().equals("enchantment.minecraft.fortune") &&
+                    enchantment2.getTranslationKey().equals("enchantment.minecraft.silk_touch") ||
+                    enchantment.getTranslationKey().equals("enchantment.minecraft.loyalty") &&
+                            enchantment2.getTranslationKey().equals("enchantment.minecraft.riptide")
+            ) {
+                return false;
+            }
             return true;
         }
         return enchantment.canCombine(enchantment2);

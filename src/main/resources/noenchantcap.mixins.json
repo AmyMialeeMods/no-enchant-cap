@@ -6,7 +6,8 @@
   "mixins": [
     "AnvilScreenHandlerMixin",
     "AnvilScreenMixin",
-    "EnchantCommandMixin"
+    "EnchantCommandMixin",
+    "EnchantmentMixin"
   ],
   "injectors": {
     "defaultRequire": 1
