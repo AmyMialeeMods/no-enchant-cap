@@ -75,6 +75,8 @@ public class AnvilScreenHandlerMixin {
                         return config.impalingCap;
                     case "enchantment.minecraft.quick_charge":
                         return config.quickChargeCap;
+                    case "enchantment.minecraft.piercing":
+                        return config.piercingCap;
                     default:
                         return config.globalEnchantCap;
                 }
