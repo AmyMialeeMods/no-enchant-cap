@@ -44,6 +44,7 @@ class EnchantModConfig implements ConfigData {
 
     public int impalingCap = 5;
     public int loyaltyCap = 3;
+    public int riptideCap = 3;
 
     public int quickChargeCap = 3;
     public int piercingCap = 4;

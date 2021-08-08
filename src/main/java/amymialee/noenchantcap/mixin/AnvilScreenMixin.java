@@ -12,7 +12,7 @@ public class AnvilScreenMixin {
     @ModifyConstant(method = "drawForeground", constant = @Constant(intValue = 40, ordinal = 0))
     private int modifyMaxCost(int original) {
         if (config.removeAnvilLimit) {
-            return 500000;
+            return Integer.MAX_VALUE;
         } else {
             return original;
         }
