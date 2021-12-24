@@ -38,7 +38,7 @@ public class NECMixin_EnchantCommand {
                         .then((CommandManager
                                 .argument("enchantment", EnchantmentArgumentType.enchantment())
                                 .executes(context -> execute(context.getSource(), EntityArgumentType.getEntities(context, "targets"), EnchantmentArgumentType.getEnchantment(context, "enchantment"), 1)))
-                                .then(CommandManager.argument("level", IntegerArgumentType.integer(0))
+                                .then(CommandManager.argument("level", IntegerArgumentType.integer())
                                         .executes(context -> execute(context.getSource(), EntityArgumentType.getEntities(context, "targets"), EnchantmentArgumentType.getEnchantment(context, "enchantment"), IntegerArgumentType.getInteger(context, "level")))))));
         ci.cancel();
     }

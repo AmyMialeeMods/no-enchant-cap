@@ -31,6 +31,12 @@ public abstract class NECMixin_Enchantment {
             mutableText.append(" ").append(new LiteralText(Integer.toString(level)));
             cir.setReturnValue(mutableText);
         }
+        if (level < 0) {
+            TranslatableText mutableText = new TranslatableText(getTranslationKey());
+            mutableText.formatted(Formatting.RED);
+            mutableText.append(" ").append(new LiteralText(Integer.toString(level)));
+            cir.setReturnValue(mutableText);
+        }
     }
 
     //Put any enchant on any item
