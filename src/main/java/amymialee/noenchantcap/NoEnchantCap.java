@@ -5,6 +5,7 @@ import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 
 public class NoEnchantCap implements ModInitializer {
+    public static String MODID = "noenchantcap";
     public static EnchantModConfig config;
     @Override
     public void onInitialize() {

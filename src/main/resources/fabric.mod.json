@@ -3,13 +3,13 @@
   "id": "noenchantcap",
   "version": "${version}",
   "name": "NoEnchantCap",
-  "description": "Removes the limit on combining enchantments.",
+  "description": "A simple mod to enhance some aspects of enchanting.",
   "authors": [
     "AmyMialee"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/no-enchant-cap",
-    "issues": "https://github.com/AmyMialee/no-enchantment-cap/issues"
+    "homepage": "https://github.com/AmyMialeeMods/no-enchant-cap",
+    "issues": "https://github.com/AmyMialeeMods/no-enchant-cap/issues"
   },
   "license": "All-Rights-Reserved",
   "icon": "assets/noenchantcap/icon.png",
@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "amymialee.noenchantcap.NoEnchantCap"
+    ],
+    "modmenu": [
+      "amymialee.noenchantcap.EnchantModMenu"
     ]
   },
   "mixins": [
