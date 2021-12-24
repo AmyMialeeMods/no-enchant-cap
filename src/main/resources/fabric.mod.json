@@ -9,9 +9,9 @@
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/no-enchant-cap",
-    "issues": "https://discord.gg/P4dUsxv6An"
+    "issues": "https://github.com/AmyMialee/no-enchantment-cap/issues"
   },
-  "license": "GPL-3.0",
+  "license": "All-Rights-Reserved",
   "icon": "assets/noenchantcap/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -23,9 +23,7 @@
     "noenchantcap.mixins.json"
   ],
   "depends": {
-    "fabricloader": "*",
-    "fabric": "*",
-    "minecraft": ">=1.16.2"
+    "cloth-config": "*"
   },
   "custom": {
     "modupdater": {

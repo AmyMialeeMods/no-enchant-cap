@@ -2,12 +2,14 @@
   "required": true,
   "minVersion": "0.8",
   "package": "amymialee.noenchantcap.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AnvilScreenHandlerMixin",
-    "AnvilScreenMixin",
-    "EnchantCommandMixin",
-    "EnchantmentMixin"
+    "NECMixin_AnvilScreen",
+    "NECMixin_AnvilScreenHandler",
+    "NECMixin_EnchantCommand",
+    "NECMixin_Enchantment",
+    "NECMixin_EnchantmentHelper",
+    "NECMixin_ItemStack"
   ],
   "injectors": {
     "defaultRequire": 1
