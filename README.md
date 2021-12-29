@@ -5,19 +5,19 @@ No Enchant Cap is a simple mod which changes some features related to enchanting
 <details>
 <summary><b>Feature List</b></summary><br>
 Removes the anvil experience limit. (Enabled by default)<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/anvilXPCap.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/anvilXPCap.png"><br><br>
 Allows any enchantment on any item. (Enabled by default)<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/incompatibleItem.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/incompatibleItem.png"><br><br>
 Enchantments over X (10) will use number levels.<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/numberLevels.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/numberLevels.png"><br><br>
 Removes all limits on the /enchant command.<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/enchantCommand.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/enchantCommand.png"><br><br>
 Using /enchant you can add negative levels. (Likely won't function as intended)<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/negativeLevels.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/negativeLevels.png"><br><br>
 Allow incompatible enchantments to be applied together. (Disabled by default)<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/mergeIncompatible.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/mergeIncompatible.png"><br><br>
 Allows combining above typical enchantment limits. (Disabled by default)<br>
-<img src="https://github.com/AmyMialee/no-enchant-cap/raw/main/assets/anvilLevelCap.png"><br><br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/anvilLevelCap.png"><br><br>
 </details>
 
 <table align="center">

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "noenchantcap",
   "version": "${version}",
-  "name": "NoEnchantCap",
+  "name": "No Enchant Cap",
   "description": "A simple mod to enhance some aspects of enchanting.",
   "authors": [
     "AmyMialee"
