@@ -8,6 +8,10 @@ Removes the anvil experience limit. (Enabled by default)<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/anvilXPCap.png"><br><br>
 Allows any enchantment on any item. (Enabled by default)<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/incompatibleItem.png"><br><br>
+Anvil costs are calculated assuming you have the minimum required amount of levels. (Enabled by default)<br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/fairCosts.png"><br><br>
+Repair costs will not increase when using anvils. (Enabled by default)<br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/noRepairCost.png"><br><br>
 Enchantments over X (10) will use number levels.<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/numberLevels.png"><br><br>
 Removes all limits on the /enchant command.<br>

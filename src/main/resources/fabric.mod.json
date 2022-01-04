@@ -26,7 +26,8 @@
     "noenchantcap.mixins.json"
   ],
   "depends": {
-    "cloth-config": "*"
+    "cloth-config": "*",
+    "fabric": "*"
   },
   "custom": {
     "modupdater": {

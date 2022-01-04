@@ -9,5 +9,7 @@ public class EnchantModConfig implements ConfigData {
     public boolean allowAllEnchantmentCombinations = false;
     public boolean allowAnyEnchantOnAnyItem = true;
     public boolean removeAnvilLevelLimit = false;
+    public boolean fairLevelCost = true;
+    public boolean removeRepairCostIncrease = true;
     public int newAnvilLevelLimit = 255;
 }

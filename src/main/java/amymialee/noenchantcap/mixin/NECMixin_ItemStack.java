@@ -23,6 +23,7 @@ public abstract class NECMixin_ItemStack {
     @Inject(method = "addEnchantment", at = @At("HEAD"), cancellable = true)
     public void addEnchantment(Enchantment enchantment, int level, CallbackInfo ci) {
         getOrCreateNbt();
+        assert nbt != null;
         if (!nbt.contains(ENCHANTMENTS_KEY, 9)) {
             nbt.put(ENCHANTMENTS_KEY, new NbtList());
         }
