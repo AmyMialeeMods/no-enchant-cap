@@ -12,4 +12,5 @@ public class EnchantModConfig implements ConfigData {
     public boolean fairLevelCost = true;
     public boolean removeRepairCostIncrease = true;
     public int newAnvilLevelLimit = 255;
+    public boolean capEnchantPotency = true;
 }
