@@ -42,7 +42,7 @@ public abstract class NECMixin_Enchantment {
     //Put any enchant on any item
     @Inject(method = "isAcceptableItem", at = @At(value = "HEAD"), cancellable = true)
     public void isAcceptableItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (NoEnchantCap.config.allowAnyEnchantOnAnyItem) {
+        if (NoEnchantCap.getConfig().allowAnyEnchantOnAnyItem) {
             cir.setReturnValue(true);
         }
     }

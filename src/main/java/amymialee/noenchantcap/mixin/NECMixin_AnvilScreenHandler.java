@@ -1,5 +1,6 @@
 package amymialee.noenchantcap.mixin;
 
+import amymialee.noenchantcap.NoEnchantCap;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -10,18 +11,16 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static amymialee.noenchantcap.NoEnchantCap.config;
-
 @Mixin(AnvilScreenHandler.class)
 public class NECMixin_AnvilScreenHandler {
     //Allow anvils growing levels above cap.
     @Redirect(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMaxLevel()I"))
     private int redirectGetMaxLevel(Enchantment enchantment) {
-        if (config.removeAnvilLevelLimit) {
+        if (NoEnchantCap.getConfig().removeAnvilLevelLimit) {
             if (enchantment.getMaxLevel() == 1) {
                 return 1;
             } else {
-                return config.newAnvilLevelLimit;
+                return NoEnchantCap.getConfig().newAnvilLevelLimit;
             }
         }
         return enchantment.getMaxLevel();
@@ -30,7 +29,7 @@ public class NECMixin_AnvilScreenHandler {
     //Allow combining all enchantments (Sharpness and Smite, etc.)
     @Redirect(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;canCombine(Lnet/minecraft/enchantment/Enchantment;)Z"))
     private boolean redirectCanCombine(Enchantment enchantment, Enchantment enchantment2) {
-        if (config.allowAllEnchantmentCombinations) {
+        if (NoEnchantCap.getConfig().allowAllEnchantmentCombinations) {
             return true;
         }
         return enchantment.canCombine(enchantment2);
@@ -39,7 +38,7 @@ public class NECMixin_AnvilScreenHandler {
     //Remove experience cost limit.
     @ModifyConstant(method = "updateResult", constant = @Constant(intValue = 40, ordinal = 2))
     private int modifyMaxCost(int original) {
-        if (config.removeAnvilXPLimit) {
+        if (NoEnchantCap.getConfig().removeAnvilXPLimit) {
             return Integer.MAX_VALUE;
         } else {
             return original;
@@ -49,7 +48,7 @@ public class NECMixin_AnvilScreenHandler {
     //Removes repair cost increase.
     @Redirect(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;setRepairCost(I)V"))
     private void removeRepairCostIncrease(ItemStack instance, int repairCost) {
-        if (!config.removeRepairCostIncrease) {
+        if (!NoEnchantCap.getConfig().removeRepairCostIncrease) {
             String REPAIR_COST_KEY = "RepairCost";
             instance.getOrCreateNbt().putInt(REPAIR_COST_KEY, repairCost);
         }
@@ -58,7 +57,7 @@ public class NECMixin_AnvilScreenHandler {
     //Takes fair numbers of levels.
     @Redirect(method = "onTakeOutput", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addExperienceLevels(I)V"))
     private void fairLevelCost(PlayerEntity instance, int levels) {
-        if (!config.fairLevelCost) {
+        if (!NoEnchantCap.getConfig().fairLevelCost) {
             instance.addExperienceLevels(levels);
         } else {
             instance.addExperience(-getLevelTotal(-levels));

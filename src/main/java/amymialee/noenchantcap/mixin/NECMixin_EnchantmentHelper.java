@@ -1,5 +1,6 @@
 package amymialee.noenchantcap.mixin;
 
+import amymialee.noenchantcap.NoEnchantCap;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -13,9 +14,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import static amymialee.noenchantcap.NoEnchantCap.config;
-import static net.minecraft.enchantment.EnchantmentHelper.*;
 
 @Mixin(EnchantmentHelper.class)
 public class NECMixin_EnchantmentHelper {
@@ -47,8 +45,8 @@ public class NECMixin_EnchantmentHelper {
     //Caps Knockback at 5k to prevent crashes.
     @Inject(method = "getKnockback", at = @At("HEAD"), cancellable = true)
     private static void getKnockback(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
-        int level = getEquipmentLevel(Enchantments.KNOCKBACK, entity);
-        if (config.capEnchantPotency && level > 5000) {
+        int level = EnchantmentHelper.getEquipmentLevel(Enchantments.KNOCKBACK, entity);
+        if (NoEnchantCap.getConfig().capEnchantPotency && level > 5000) {
             cir.setReturnValue(5000);
         }
     }
@@ -56,8 +54,8 @@ public class NECMixin_EnchantmentHelper {
     //Caps Efficiency at 5k to prevent speed overflow.
     @Inject(method = "getEfficiency", at = @At("HEAD"), cancellable = true)
     private static void getEfficiency(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
-        int level = getEquipmentLevel(Enchantments.EFFICIENCY, entity);
-        if (config.capEnchantPotency && level > 5000) {
+        int level = EnchantmentHelper.getEquipmentLevel(Enchantments.EFFICIENCY, entity);
+        if (NoEnchantCap.getConfig().capEnchantPotency && level > 5000) {
             cir.setReturnValue(5000);
         }
     }
@@ -65,8 +63,8 @@ public class NECMixin_EnchantmentHelper {
     //Caps Looting at 5k to prevent insane lag.
     @Inject(method = "getLooting", at = @At("HEAD"), cancellable = true)
     private static void getLooting(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
-        int level = getEquipmentLevel(Enchantments.LOOTING, entity);
-        if (config.capEnchantPotency && level > 10000) {
+        int level = EnchantmentHelper.getEquipmentLevel(Enchantments.LOOTING, entity);
+        if (NoEnchantCap.getConfig().capEnchantPotency && level > 10000) {
             cir.setReturnValue(10000);
         }
     }
@@ -75,12 +73,12 @@ public class NECMixin_EnchantmentHelper {
     @Inject(method = "getLevel", at = @At("HEAD"), cancellable = true)
     private static void getLevel(Enchantment enchantment, ItemStack stack, CallbackInfoReturnable<Integer> cir) {
         if (!stack.isEmpty() && enchantment == Enchantments.FORTUNE) {
-            Identifier identifier = getEnchantmentId(enchantment);
+            Identifier identifier = EnchantmentHelper.getEnchantmentId(enchantment);
             NbtList nbtList = stack.getEnchantments();
 
             for(int i = 0; i < nbtList.size(); ++i) {
                 NbtCompound nbtCompound = nbtList.getCompound(i);
-                Identifier identifier2 = getIdFromNbt(nbtCompound);
+                Identifier identifier2 = EnchantmentHelper.getIdFromNbt(nbtCompound);
                 if (identifier2 != null && identifier2.equals(identifier)) {
                     if (EnchantmentHelper.getLevelFromNbt(nbtCompound) > 10000) {
                         cir.setReturnValue(10000);
