@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.EnchantCommand;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,9 +24,9 @@ import java.util.Collection;
 
 @Mixin(EnchantCommand.class)
 public class NECMixin_EnchantCommand {
-    private static final DynamicCommandExceptionType FAILED_ENTITY_EXCEPTION = new DynamicCommandExceptionType(entityName -> new TranslatableText("commands.enchant.failed.entity", entityName));
-    private static final DynamicCommandExceptionType FAILED_ITEMLESS_EXCEPTION = new DynamicCommandExceptionType(entityName -> new TranslatableText("commands.enchant.failed.itemless", entityName));
-    private static final SimpleCommandExceptionType FAILED_EXCEPTION = new SimpleCommandExceptionType(new TranslatableText("commands.enchant.failed"));
+    private static final DynamicCommandExceptionType FAILED_ENTITY_EXCEPTION = new DynamicCommandExceptionType(entityName -> Text.translatable("commands.enchant.failed.entity", entityName));
+    private static final DynamicCommandExceptionType FAILED_ITEMLESS_EXCEPTION = new DynamicCommandExceptionType(entityName -> Text.translatable("commands.enchant.failed.itemless", entityName));
+    private static final SimpleCommandExceptionType FAILED_EXCEPTION = new SimpleCommandExceptionType(Text.translatable("commands.enchant.failed"));
 
     //Removes limits on /enchant
     @Inject(method = "register", at = @At(value = "HEAD"), cancellable = true)
@@ -62,9 +62,9 @@ public class NECMixin_EnchantCommand {
             throw FAILED_EXCEPTION.create();
         }
         if (targets.size() == 1) {
-            source.sendFeedback(new TranslatableText("commands.enchant.success.single", enchantment.getName(level), targets.iterator().next().getDisplayName()), true);
+            source.sendFeedback(Text.translatable("commands.enchant.success.single", enchantment.getName(level), targets.iterator().next().getDisplayName()), true);
         } else {
-            source.sendFeedback(new TranslatableText("commands.enchant.success.multiple", enchantment.getName(level), targets.size()), true);
+            source.sendFeedback(Text.translatable("commands.enchant.success.multiple", enchantment.getName(level), targets.size()), true);
         }
         return i;
     }

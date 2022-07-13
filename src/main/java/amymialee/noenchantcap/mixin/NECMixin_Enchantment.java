@@ -3,9 +3,8 @@ package amymialee.noenchantcap.mixin;
 import amymialee.noenchantcap.NoEnchantCap;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,19 +21,19 @@ public abstract class NECMixin_Enchantment {
     @Inject(method = "getName", at = @At("HEAD"), cancellable = true)
     public void getName(int level, CallbackInfoReturnable<Text> cir) {
         if (level > 10) {
-            TranslatableText mutableText = new TranslatableText(getTranslationKey());
+            MutableText mutableText = Text.translatable(getTranslationKey());
             if (isCursed()) {
                 mutableText.formatted(Formatting.RED);
             } else {
                 mutableText.formatted(Formatting.GRAY);
             }
-            mutableText.append(" ").append(new LiteralText(Integer.toString(level)));
+            mutableText.append(" ").append(Text.literal(Integer.toString(level)));
             cir.setReturnValue(mutableText);
         }
         if (level < 0) {
-            TranslatableText mutableText = new TranslatableText(getTranslationKey());
+            MutableText mutableText = Text.translatable(getTranslationKey());
             mutableText.formatted(Formatting.RED);
-            mutableText.append(" ").append(new LiteralText(Integer.toString(level)));
+            mutableText.append(" ").append(Text.literal(Integer.toString(level)));
             cir.setReturnValue(mutableText);
         }
     }
