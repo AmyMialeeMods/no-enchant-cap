@@ -1,5 +1,4 @@
 # No Enchant Cap
-
 No Enchant Cap is a simple mod which changes some features related to enchanting in Minecraft.
 
 <details>
@@ -24,15 +23,27 @@ Allows combining above typical enchantment limits. (Disabled by default)<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/anvilLevelCap.png"><br><br>
 </details>
 
+To add No Enchant Cap to your project as a dependency you need to add the following to your `build.gradle`:
+```gradle
+repositories {
+	maven { url = "https://maven.willbl.dev/releases" }
+}
+
+dependencies {
+	modImplementation "amymialee:no-enchant-cap:2.1.2+1.19.x"
+}
+```
+
 <table align="center">
     <tr>
         <th><b>Join my Discord</b></th>
         <th><b>Find the mod on Curseforge!</b></th>
         <th><b>Find the mod on Modrinth!</b></th>
+        <th><b>Support me on Ko-fi!</b></th>
     </tr>
     <tr>
         <th>
-            <a href="https://discord.gg/P4dUsxv6An">
+            <a href="http://discord.amymialee.xyz">
                 <img src="https://cdn.discordapp.com/attachments/793182374410059887/924000460292104282/3437c10597c1526c3dbd98c737c2bcae.svg" width="150" height="150">
             </a>
         </th>
@@ -46,5 +57,17 @@ Allows combining above typical enchantment limits. (Disabled by default)<br>
                 <img src="https://docs.modrinth.com/img/logo.svg" width="150" height="150">
             </a>
         </th>
+        <th>
+            <a href="http://kofi.amymialee.xyz">
+                <img src="https://storage.ko-fi.com/cdn/kofi_stroke_cup.svg" width="150" height="150">
+            </a>
+        </th>
     </tr>
 </table>
+
+<b>Interested in hosting a server for any of my mods?</b>  
+Be sure to go with Bloom Host at:  
+<a href="http://bloom.amymialee.xyz">
+<img src="https://i.imgur.com/h4556XW.gif">
+</a>  
+<b>Buying a server using this link supports me directly!</b>
