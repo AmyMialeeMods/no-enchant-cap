@@ -6,11 +6,13 @@
   "mixins": [
     "NECMixin_AnvilScreen",
     "NECMixin_AnvilScreenHandler",
+    "NECMixin_AnvilScreenHandler2",
     "NECMixin_EnchantCommand",
     "NECMixin_Enchantment",
     "NECMixin_EnchantmentHelper",
     "NECMixin_ItemStack"
   ],
+  "plugin": "amymialee.noenchantcap.MixinPlugin",
   "injectors": {
     "defaultRequire": 1
   }
