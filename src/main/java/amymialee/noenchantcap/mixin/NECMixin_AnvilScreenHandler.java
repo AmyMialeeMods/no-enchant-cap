@@ -53,27 +53,4 @@ public class NECMixin_AnvilScreenHandler {
             instance.getOrCreateNbt().putInt(REPAIR_COST_KEY, repairCost);
         }
     }
-
-    //Takes fair numbers of levels.
-    @Redirect(method = "onTakeOutput", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;addExperienceLevels(I)V"))
-    private void fairLevelCost(PlayerEntity instance, int levels) {
-        if (!NoEnchantCap.getConfig().fairLevelCost) {
-            instance.addExperienceLevels(levels);
-        } else {
-            instance.addExperience(-getLevelTotal(-levels));
-        }
-    }
-    private static int getLevelTotal(int level) {
-        int total = 0;
-        for (int i = 1; i <= level; i++) {
-            if (i >= 30) {
-                total += 112 + (i - 30) * 9;
-            } else if (i >= 15) {
-                total += 37 + (i - 15) * 5;
-            } else {
-                total += 7 + i * 2;
-            }
-        }
-        return total;
-    }
 }
