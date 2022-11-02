@@ -3,14 +3,16 @@
   "minVersion": "0.8",
   "package": "amymialee.noenchantcap.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "NECMixin_AnvilScreen",
+  "mixin": [
     "NECMixin_AnvilScreenHandler",
     "NECMixin_AnvilScreenHandler2",
     "NECMixin_EnchantCommand",
     "NECMixin_Enchantment",
     "NECMixin_EnchantmentHelper",
     "NECMixin_ItemStack"
+  ],
+  "client": [
+    "NECMixin_AnvilScreen"
   ],
   "plugin": "amymialee.noenchantcap.MixinPlugin",
   "injectors": {
