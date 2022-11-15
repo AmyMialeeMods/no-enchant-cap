@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "noenchantcap",
+    "version": "${version}",
+    "name": "No Enchant Cap",
+    "description": "A simple mod to enhance some aspects of enchanting.",
+    "authors": [
+      "AmyMialee"
+    ],
+    "contact": {
+      "homepage": "https://github.com/AmyMialeeMods/no-enchant-cap",
+      "sources": "https://github.com/AmyMialeeMods/no-enchant-cap"
+    },
+    "license": "arrg",
+    "icon": "assets/icon.png",
+    "environment": "*",
+    "entrypoints": {
+      "preLaunch": [
+        "xyz.amymialee.noenchantcap.NoEnchantCapPreLaunch"
+      ],
+      "main": [
+        "xyz.amymialee.noenchantcap.NoEnchantCapFabric"
+      ]
+    },
+    "mixins": [
+      "noenchantcap.fabric.mixins.json"
+    ],
+    "depends": {
+      "fabric": "*"
+    }
+  }
+  

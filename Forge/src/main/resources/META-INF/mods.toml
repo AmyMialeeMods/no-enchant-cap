@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="All rights reserved"
+issueTrackerURL="https://github.com/AmyMialeeMods/no-enchant-cap/issues"
+[[mods]]
+modId="noenchantcap"
+version="${file.jarVersion}"
+displayName="No Enchant Cap"
+displayURL="https://github.com/AmyMialeeMods/no-enchant-cap"
+logoFile="icon.png"
+credits=""
+authors="AmyMialee"
+description='''
+A simple mod to enhance some aspects of enchanting.
+'''
+[[dependencies.multiloader]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.multiloader]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
