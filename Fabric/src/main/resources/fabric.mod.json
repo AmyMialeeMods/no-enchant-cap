@@ -23,7 +23,8 @@
       ]
     },
     "mixins": [
-      "noenchantcap.fabric.mixins.json"
+      "noenchantcap.fabric.mixins.json",
+      "noenchantcap.common.mixins.json"
     ],
     "depends": {
       "fabric": "*"
