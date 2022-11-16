@@ -18,7 +18,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-archivesBaseName = "${mod_name}-forge-${minecraft_version}"
+archivesBaseName = "${mod_id}-forge-${minecraft_version}"
 
 minecraft {
     mappings channel: 'official', version: minecraft_version
@@ -94,7 +94,7 @@ dependencies {
 
 shadowJar {
     configurations = [project.configurations.shade]
-    relocate 'com.github.LlamaLad7', 'xyz.amymialee.noenchantcap.shaded.MixinExtras'
+    relocate 'com.github.llamalad7.mixinextras', 'xyz.amymialee.noenchantcap.shaded.mixinextras'
     finalizedBy 'reobfShadowJar'
 }
 
@@ -111,12 +111,12 @@ tasks.withType(JavaCompile) {
 processResources {
     from project(":Common").sourceSets.main.resources
     filesMatching("${mod_id}.common.mixins.json") {
-        expand "refmap_target": "${archivesBaseName}-"
+        expand "refmap_target": "${mod_id}-"
     }
 }
 
 mixin {
-    add sourceSets.main, "${archivesBaseName}.refmap.json"
+    add sourceSets.main, "${mod_id}.refmap.json"
     config "${mod_id}.common.mixins.json"
     config "${mod_id}.forge.mixins.json"
 

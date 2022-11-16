@@ -9,10 +9,11 @@
     ],
     "contact": {
       "homepage": "https://github.com/AmyMialeeMods/no-enchant-cap",
+      "issues": "https://github.com/AmyMialeeMods/no-enchant-cap/issues",
       "sources": "https://github.com/AmyMialeeMods/no-enchant-cap"
     },
     "license": "All-Rights-Reserved",
-    "icon": "assets/icon.png",
+    "icon": "assets/noenchantcap/icon.png",
     "environment": "*",
     "entrypoints": {
       "preLaunch": [
