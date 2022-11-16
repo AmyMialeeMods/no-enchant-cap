@@ -17,7 +17,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":Common")
-    implementation("com.github.LlamaLad7:MixinExtras:0.1.1")
+    implementation include("com.github.LlamaLad7:MixinExtras:0.1.1")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.1")
 }
 
@@ -37,7 +37,6 @@ loom {
         }
     }
 }
-
 
 processResources {
     from project(":Common").sourceSets.main.resources

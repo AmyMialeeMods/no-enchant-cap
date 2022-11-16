@@ -2,10 +2,12 @@ buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.spongepowered:mixingradle:0.7.+'
+        classpath 'gradle.plugin.com.github.johnrengelman:shadow:7.1.2'
     }
 }
 
@@ -14,6 +16,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 archivesBaseName = "${mod_name}-forge-${minecraft_version}"
 
@@ -71,6 +74,11 @@ minecraft {
 
 sourceSets.main.resources.srcDir 'src/generated/resources'
 
+configurations {
+    shade
+    implementation.extendsFrom shade
+}
+
 repositories {
     maven { url "https://jitpack.io" }
 }
@@ -78,9 +86,22 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly project(":Common")
-    implementation("com.github.LlamaLad7:MixinExtras:0.1.1")
+    minecraftLibrary("com.github.LlamaLad7:MixinExtras:0.1.1")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.1")
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
+    shade("com.github.LlamaLad7:MixinExtras:0.1.1")
+}
+
+shadowJar {
+    configurations = [project.configurations.shade]
+    relocate 'com.github.LlamaLad7', 'xyz.amymialee.noenchantcap.shaded.MixinExtras'
+    finalizedBy 'reobfShadowJar'
+}
+
+assemble.dependsOn shadowJar
+
+reobf {
+    shadowJar {}
 }
 
 tasks.withType(JavaCompile) {
