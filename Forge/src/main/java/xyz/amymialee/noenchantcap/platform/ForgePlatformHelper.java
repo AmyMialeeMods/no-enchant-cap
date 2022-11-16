@@ -30,4 +30,9 @@ public class ForgePlatformHelper implements IPlatformHelper {
     public GameRules.Type<GameRules.BooleanValue> createBooleanValue(boolean defaultValue) {
         return GameRules.BooleanValue.create(defaultValue);
     }
+
+    @Override
+    public GameRules.Type<GameRules.IntegerValue> createIntegerValue(int defaultValue) {
+        return GameRules.IntegerValue.create(defaultValue);
+    }
 }

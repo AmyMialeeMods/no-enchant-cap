@@ -73,7 +73,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 
     @WrapWithCondition(method = "onTake", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;giveExperienceLevels(I)V"))
     private boolean noEnchantCap$fairAnvilCost(Player instance, int levels) {
-        if (this.player.level.getGameRules().getBoolean(NoEnchantCap.FAIR_ANVIL_COST)) {
+        if (this.player.level.getGameRules().getBoolean(NoEnchantCap.FAIR_EXPERIENCE_COST)) {
             this.player.giveExperiencePoints(-noEnchantCap$getExperienceTotal(-levels));
             return false;
         }

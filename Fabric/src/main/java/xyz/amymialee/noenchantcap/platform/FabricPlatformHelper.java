@@ -34,4 +34,9 @@ public class FabricPlatformHelper implements IPlatformHelper {
     public GameRules.Type<GameRules.BooleanValue> createBooleanValue(boolean defaultValue) {
         return GameRuleFactory.createBooleanRule(defaultValue);
     }
+
+    @Override
+    public GameRules.Type<GameRules.IntegerValue> createIntegerValue(int defaultValue) {
+        return GameRuleFactory.createIntRule(defaultValue);
+    }
 }

@@ -9,7 +9,8 @@
     "EnchantCommandMixin",
     "EnchantmentHelperMixin",
     "EnchantmentMixin",
-    "ItemStackMixin"
+    "ItemStackMixin",
+    "PlayerMixin"
   ],
   "client": [
   ],
