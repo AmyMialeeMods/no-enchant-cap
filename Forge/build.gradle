@@ -116,7 +116,7 @@ processResources {
 }
 
 mixin {
-    add sourceSets.main, "${archivesBaseName}-refmap.json"
+    add sourceSets.main, "${archivesBaseName}.refmap.json"
     config "${mod_id}.common.mixins.json"
     config "${mod_id}.forge.mixins.json"
 
