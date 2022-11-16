@@ -96,6 +96,7 @@ shadowJar {
     configurations = [project.configurations.shade]
     relocate 'com.github.llamalad7.mixinextras', 'xyz.amymialee.noenchantcap.shaded.mixinextras'
     finalizedBy 'reobfShadowJar'
+    classifier = ""
 }
 
 assemble.dependsOn shadowJar
