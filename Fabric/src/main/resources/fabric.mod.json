@@ -8,11 +8,11 @@
       "AmyMialee"
     ],
     "contact": {
-      "homepage": "https://github.com/AmyMialeeMods/no-enchant-cap",
+      "homepage": "http://discord.amymialee.xyz/",
       "issues": "https://github.com/AmyMialeeMods/no-enchant-cap/issues",
       "sources": "https://github.com/AmyMialeeMods/no-enchant-cap"
     },
-    "license": "All-Rights-Reserved",
+    "license": "LGPL-3.0",
     "icon": "assets/noenchantcap/icon.png",
     "environment": "*",
     "entrypoints": {
