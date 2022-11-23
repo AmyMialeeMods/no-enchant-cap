@@ -1,0 +1,11 @@
+{
+    "text.autoconfig.no-enchant-cap.title" : "No Enchant Cap Configuração",
+  
+    "text.autoconfig.no-enchant-cap.option.removeAnvilXPLimit" : "Remova o limite de experiência da bigorna.",
+    "text.autoconfig.no-enchant-cap.option.allowAllEnchantmentCombinations" : "Permitir que todos os encantamentos sejam combinados.",
+    "text.autoconfig.no-enchant-cap.option.allowAnyEnchantOnAnyItem" : "Permitir qualquer encantamento em qualquer item.",
+    "text.autoconfig.no-enchant-cap.option.removeAnvilLevelLimit" : "Remova o limite de nível de encantamento da bigorna.",
+    "text.autoconfig.no-enchant-cap.option.fairLevelCost" : "Custos de nível de bigorna justos.",
+    "text.autoconfig.no-enchant-cap.option.removeRepairCostIncrease" : "Remover aumentos de custo de reparo.",
+    "text.autoconfig.no-enchant-cap.option.newAnvilLevelLimit" : "Novo limite de nível de encantamento de bigorna."
+  }
