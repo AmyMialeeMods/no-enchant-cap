@@ -3,24 +3,22 @@ No Enchant Cap is a simple mod which changes some features related to enchanting
 
 <details>
 <summary><b>Feature List</b></summary><br>
-Removes the anvil experience limit. (Enabled by default)<br>
+Anvils will no longer give the "Too Expensive" limit.<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/anvilXPCap.png"><br><br>
-Allows any enchantment on any item. (Enabled by default)<br>
-<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/incompatibleItem.png"><br><br>
-Anvil costs are calculated assuming you have the minimum required amount of levels. (Enabled by default)<br>
-<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/fairCosts.png"><br><br>
-Repair costs will not increase when using anvils. (Enabled by default)<br>
-<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/noRepairCost.png"><br><br>
 Enchantments over X (10) will use number levels.<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/numberLevels.png"><br><br>
 Removes all limits on the /enchant command.<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/enchantCommand.png"><br><br>
-Using /enchant you can add negative levels. (Likely won't function as intended)<br>
-<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/negativeLevels.png"><br><br>
-Allow incompatible enchantments to be applied together. (Disabled by default)<br>
+You can mix any enchantments on the same item. (Off by default).<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/mergeIncompatible.png"><br><br>
-Allows combining above typical enchantment limits. (Disabled by default)<br>
+You can put any enchantment on any item. (Off by default).<br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/incompatibleItem.png"><br><br>
+Anvils can go above the usual max level of an enchantment. (Off by default).<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/anvilLevelCap.png"><br><br>
+Repair costs of items on anvils doesn't increase. (On by default).<br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/noRepairCost.png"><br><br>
+Experience costs are done more fairly at high levels. (On by default).<br>
+<img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/fairCosts.png"><br><br>
 </details>
 
 To add No Enchant Cap to your project as a dependency you need to add the following to your `build.gradle`:
@@ -30,7 +28,7 @@ repositories {
 }
 
 dependencies {
-	modImplementation "amymialee:no-enchant-cap:2.1.2+1.19.x"
+	modImplementation "xyz.amymialee:no-enchant-cap:2.2.0"
 }
 ```
 

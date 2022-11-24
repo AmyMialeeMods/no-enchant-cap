@@ -1,0 +1,12 @@
+{
+  "gamerule.category.noenchantcap": "No Enchant Cap",
+
+  "gamerule.noenchantcap:mix_any_enchants": "Combine any enchantments",
+  "gamerule.noenchantcap:enchant_any_item": "Any enchantment on any item",
+  "gamerule.noenchantcap:uncapped_anvils": "Anvils can go above level caps",
+  "gamerule.noenchantcap:static_repair_cost": "Repair cost doesn't increase",
+  "gamerule.noenchantcap:fair_experience_cost": "Anvils charge fair experience",
+
+  "commands.noenchantcap.enchantedbook.success.single": "Gave book containing enchantment %s to %s",
+  "commands.noenchantcap.enchantedbook.success.multiple": "Gave book containing enchantment %s to %s"
+}
