@@ -1,0 +1,12 @@
+{
+    "gamerule.category.noenchantcap": "No Enchant Cap",
+  
+    "gamerule.noenchantcap:mix_any_enchants": "Combine quaisquer encantamentos",
+    "gamerule.noenchantcap:enchant_any_item": "Qualquer encantamento em qualquer item",
+    "gamerule.noenchantcap:uncapped_anvils": "As bigornas podem ultrapassar os limites de nível",
+    "gamerule.noenchantcap:static_repair_cost": "O custo do reparo não aumenta",
+    "gamerule.noenchantcap:fair_experience_cost": "Bigornas cobram experiência justa",
+  
+    "commands.noenchantcap.enchantedbook.success.single": "Deu livro contendo encantamento %s para %s",
+    "commands.noenchantcap.enchantedbook.success.multiple": "Deu livro contendo encantamento %s para %s"
+  }
