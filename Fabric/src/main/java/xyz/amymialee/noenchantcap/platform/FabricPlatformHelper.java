@@ -1,14 +1,15 @@
 package xyz.amymialee.noenchantcap.platform;
 
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.level.GameRules;
-import xyz.amymialee.noenchantcap.EnchantedBookCommand;
 import xyz.amymialee.noenchantcap.NoEnchantCapFabric;
 import xyz.amymialee.noenchantcap.platform.services.IPlatformHelper;
 
+/**
+ * Handles Fabric exclusive code.
+ */
 public class FabricPlatformHelper implements IPlatformHelper {
     @Override
     public String getPlatformName() {

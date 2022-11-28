@@ -8,6 +8,9 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Plugin to Initialize Mixin Extras which is used heavily in the mod.
+ */
 public class NoEnchantCapPlugin implements IMixinConfigPlugin {
     @Override
     public void onLoad(String mixinPackage) {

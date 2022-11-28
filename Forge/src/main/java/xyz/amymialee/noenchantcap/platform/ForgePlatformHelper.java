@@ -5,6 +5,9 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 import xyz.amymialee.noenchantcap.platform.services.IPlatformHelper;
 
+/**
+ * Handles Forge exclusive code.
+ */
 public class ForgePlatformHelper implements IPlatformHelper {
     @Override
     public String getPlatformName() {

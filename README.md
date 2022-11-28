@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-	modImplementation "xyz.amymialee:no-enchant-cap:2.2.0"
+	modImplementation "xyz.amymialee.noenchantcap:noenchantcap-fabric-1.19.2:2.2.2"
 }
 ```
 
