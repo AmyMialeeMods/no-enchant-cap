@@ -38,7 +38,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
             ItemStack itemStack2 = this.inputSlots.getItem(1);
             int a = EnchantmentHelper.getEnchantments(itemStack1).getOrDefault(enchantment, 0);
             int b = EnchantmentHelper.getEnchantments(itemStack2).getOrDefault(enchantment, 0);
-            return Math.max(a, b);
+            return Math.max(max, Math.max(a, b));
         }
     }
 

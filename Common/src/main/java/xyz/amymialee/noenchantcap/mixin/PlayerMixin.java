@@ -27,7 +27,8 @@ public abstract class PlayerMixin extends LivingEntity {
     @Inject(method = "onEnchantmentPerformed", at = @At(value = "HEAD"), cancellable = true)
     private void noEnchantCap$fairishEnchantCost(ItemStack stack, int levels, CallbackInfo ci) {
         if (this.level.getGameRules().getBoolean(NoEnchantCap.FAIR_EXPERIENCE_COST)) {
-            this.giveExperiencePoints(-noEnchantCap$getExperienceTotal(Math.min(30, this.experienceLevel)) * 3);
+            int min = Math.min(30, this.experienceLevel);
+            this.giveExperiencePoints(-noEnchantCap$getExperienceTotal(min - levels, min));
             if (this.experienceLevel < 0) {
                 this.experienceLevel = 0;
                 this.experienceProgress = 0.0F;
@@ -38,9 +39,9 @@ public abstract class PlayerMixin extends LivingEntity {
         }
     }
 
-    private static int noEnchantCap$getExperienceTotal(int level) {
+    private static int noEnchantCap$getExperienceTotal(int startingAt, int endingAt) {
         int total = 0;
-        for (int i = 1; i <= level; i++) {
+        for (int i = startingAt; i < endingAt ; i++) {
             if (i >= 30) {
                 total += 112 + (i - 30) * 9;
             } else if (i >= 15) {
