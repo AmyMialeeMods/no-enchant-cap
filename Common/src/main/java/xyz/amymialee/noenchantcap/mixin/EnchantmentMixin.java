@@ -26,7 +26,7 @@ public abstract class EnchantmentMixin {
             }
             text.append(" ").append(Component.literal(String.valueOf(level)));
             cir.setReturnValue(text);
-        } else if (level < 0) {
+        } else if (level <= 0) {
             MutableComponent text = Component.translatable(this.getDescriptionId());
             text.withStyle(ChatFormatting.RED);
             text.append(" ").append(Component.literal(String.valueOf(level)));

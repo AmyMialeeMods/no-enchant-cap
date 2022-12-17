@@ -17,6 +17,6 @@ public class NoEnchantCapFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         NoEnchantCap.init();
-        CommandRegistrationCallback.EVENT.register((commandDispatcher, commandBuildContext, commandSelection) -> EnchantedBookCommand.register(commandDispatcher));
+        CommandRegistrationCallback.EVENT.register((commandDispatcher, commandBuildContext, commandSelection) -> EnchantedBookCommand.register(commandDispatcher, commandBuildContext));
     }
 }

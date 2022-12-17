@@ -1,6 +1,7 @@
 package xyz.amymialee.noenchantcap;
 
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -27,6 +28,7 @@ public class NoEnchantCapForge {
     @SubscribeEvent
     public void onRegisterCommandsEvent(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-        EnchantedBookCommand.register(dispatcher);
+        CommandBuildContext buildContext = event.getBuildContext();
+        EnchantedBookCommand.register(dispatcher, buildContext);
     }
 }
