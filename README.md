@@ -1,5 +1,6 @@
 # No Enchant Cap
 No Enchant Cap is a simple mod which changes some features related to enchanting in Minecraft.
+All toggleable features are enabled/disabled using the included gamerules.
 
 <details>
 <summary><b>Feature List</b></summary><br>
@@ -20,17 +21,6 @@ Repair costs of items on anvils doesn't increase. (On by default).<br>
 Experience costs are done more fairly at high levels. (On by default).<br>
 <img src="https://github.com/AmyMialeeMods/no-enchant-cap/raw/main/assets/fairCosts.png"><br><br>
 </details>
-
-To add No Enchant Cap to your project as a dependency you need to add the following to your `build.gradle`:
-```gradle
-repositories {
-	maven { url = "https://maven.willbl.dev/releases" }
-}
-
-dependencies {
-	modImplementation "xyz.amymialee.noenchantcap:noenchantcap-fabric-1.19.2:2.2.2"
-}
-```
 
 <table align="center">
     <tr>
