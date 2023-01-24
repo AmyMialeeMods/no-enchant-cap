@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.At;
 public class CombatRulesMixin {
     @WrapOperation(method = "getDamageAfterMagicAbsorb", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;clamp(FFF)F"))
     private static float noEnchantCap$uncappedCommand(float variable, float min, float max, Operation<Float> original) {
-        return variable;
+        return original.call(variable, min, 24.95f);
     }
 }

@@ -22,7 +22,6 @@ archivesBaseName = "${mod_id}-forge-${minecraft_version}"
 
 minecraft {
     mappings channel: 'official', version: minecraft_version
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     if (project.hasProperty('forge_ats_enabled') && project.findProperty('forge_ats_enabled').toBoolean()) {
         accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
         project.logger.debug('Forge Access Transformers are enabled for this project.')
@@ -89,7 +88,7 @@ dependencies {
     minecraftLibrary("com.github.LlamaLad7:MixinExtras:0.1.1")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.1")
     annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
-    shade("com.github.LlamaLad7:MixinExtras:0.1.1")
+    jarJar("com.github.LlamaLad7:MixinExtras:0.1.1")
 }
 
 shadowJar {
