@@ -31,7 +31,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
         if (max == 1) {
             return 1;
         }
-        if (this.player.level.getGameRules().getBoolean(NoEnchantCap.UNCAPPED_ANVILS)) {
+        if (this.player.level().getGameRules().getBoolean(NoEnchantCap.UNCAPPED_ANVILS)) {
             return Integer.MAX_VALUE;
         } else {
             ItemStack itemStack1 = this.inputSlots.getItem(0);
@@ -44,7 +44,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 
     @WrapOperation(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/enchantment/Enchantment;isCompatibleWith(Lnet/minecraft/world/item/enchantment/Enchantment;)Z"))
     private boolean noEnchantCap$moreCombinations(Enchantment enchantment1, Enchantment enchantment2, Operation<Boolean> original) {
-        if (this.player.level.getGameRules().getBoolean(NoEnchantCap.MIX_ANY_ENCHANTS)) {
+        if (this.player.level().getGameRules().getBoolean(NoEnchantCap.MIX_ANY_ENCHANTS)) {
             return true;
         }
         return original.call(enchantment1, enchantment2);
@@ -52,7 +52,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 
     @WrapOperation(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;getAbilities()Lnet/minecraft/world/entity/player/Abilities;", ordinal = 0))
     private Abilities noEnchantCap$enchantAnyItem(Player player, Operation<Abilities> original) {
-        if (this.player.level.getGameRules().getBoolean(NoEnchantCap.ENCHANT_ANY_ITEM)) {
+        if (this.player.level().getGameRules().getBoolean(NoEnchantCap.ENCHANT_ANY_ITEM)) {
             Abilities abilities = new Abilities();
             abilities.instabuild = true;
             return abilities;
@@ -67,13 +67,13 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 
     @WrapWithCondition(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;setRepairCost(I)V"))
     private boolean noEnchantCap$staticRepairCost(ItemStack instance, int repairCost) {
-        return !this.player.level.getGameRules().getBoolean(NoEnchantCap.STATIC_REPAIR_COST);
+        return !this.player.level().getGameRules().getBoolean(NoEnchantCap.STATIC_REPAIR_COST);
     }
 
 
     @WrapWithCondition(method = "onTake", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;giveExperienceLevels(I)V"))
     private boolean noEnchantCap$fairAnvilCost(Player instance, int levels) {
-        if (this.player.level.getGameRules().getBoolean(NoEnchantCap.FAIR_EXPERIENCE_COST)) {
+        if (this.player.level().getGameRules().getBoolean(NoEnchantCap.FAIR_EXPERIENCE_COST)) {
             this.player.giveExperiencePoints(-noEnchantCap$getExperienceTotal(-levels));
             return false;
         }

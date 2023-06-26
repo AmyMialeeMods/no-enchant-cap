@@ -88,7 +88,8 @@ dependencies {
     minecraftLibrary("com.github.LlamaLad7:MixinExtras:0.1.1")
     annotationProcessor("com.github.LlamaLad7:MixinExtras:0.1.1")
     annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
-    jarJar("com.github.LlamaLad7:MixinExtras:0.1.1")
+    implementation("com.github.LlamaLad7:MixinExtras:0.1.1")
+    //jarJar("com.github.LlamaLad7:MixinExtras:0.1.1")
 }
 
 shadowJar {
