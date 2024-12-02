@@ -10,6 +10,7 @@ import net.minecraft.commands.arguments.ResourceArgument;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 
 import java.util.Collection;
+import java.util.function.Supplier;
 
 public class EnchantedBookCommand {
     public static void register(CommandDispatcher<CommandSourceStack> commandDispatcher, CommandBuildContext commandBuildContext) {
@@ -35,9 +37,9 @@ public class EnchantedBookCommand {
             player.addItem(itemStack);
         }
         if (collection.size() == 1) {
-            commandSourceStack.sendSuccess(Component.translatable("commands.noenchantcap.enchantedbook.success.single", enchantment.getFullname(level), collection.iterator().next().getDisplayName()), true);
+            commandSourceStack.sendSuccess((Supplier<Component>) Component.translatable("commands.noenchantcap.enchantedbook.success.single", enchantment.getFullname(level), collection.iterator().next().getDisplayName()), true);
         } else {
-            commandSourceStack.sendSuccess(Component.translatable("commands.noenchantcap.enchantedbook.success.multiple", enchantment.getFullname(level), collection.size()), true);
+            commandSourceStack.sendSuccess((Supplier<Component>) Component.translatable("commands.noenchantcap.enchantedbook.success.multiple", enchantment.getFullname(level), collection.size()), true);
         }
         return collection.size();
     }
